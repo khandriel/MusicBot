@@ -35,7 +35,7 @@ public abstract class MusicCommand extends Command
     protected boolean bePlaying;
     protected boolean beListening;
     
-    public MusicCommand(Bot bot)
+    protected MusicCommand(Bot bot)
     {
         this.bot = bot;
         this.guildOnly = true;
