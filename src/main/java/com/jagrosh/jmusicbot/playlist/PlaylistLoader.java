@@ -28,6 +28,7 @@ import java.nio.file.Files;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.security.SecureRandom;
 
 /**
  *
@@ -131,7 +132,7 @@ public class PlaylistLoader
     {
         for(int first =0; first<list.size(); first++)
         {
-            int second = (int)(Math.random()*list.size());
+            int second = (int)(SecureRandom.nextInt()*list.size());
             T tmp = list.get(first);
             list.set(first, list.get(second));
             list.set(second, tmp);
@@ -208,7 +209,7 @@ public class PlaylistLoader
                             if(shuffle)
                                 for(int first =0; first<loaded.size(); first++)
                                 {
-                                    int second = (int)(Math.random()*loaded.size());
+                                    int second = (int)(SecureRandom.nextInt()*loaded.size());
                                     AudioTrack tmp = loaded.get(first);
                                     loaded.set(first, loaded.get(second));
                                     loaded.set(second, tmp);
