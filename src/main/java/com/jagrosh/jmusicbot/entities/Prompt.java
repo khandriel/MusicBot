@@ -125,8 +125,7 @@ public class Prompt
             }
             catch(Exception e)
             {
-                alert(Level.ERROR, title, "Unable to read input from command line.");
-                e.printStackTrace();
+                LOGGER.log("Unable to read input from command line.", e);
                 return null;
             }
         }
