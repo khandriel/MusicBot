@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.security.SecureRandom;
 
 /**
  *
@@ -115,7 +116,7 @@ public class FairQueue<T extends Queueable> {
         for(int j=0; j<iset.size(); j++)
         {
             int first = iset.get(j);
-            int second = iset.get((int)(Math.random()*iset.size()));
+            int second = iset.get((int)(SecureRandom.nextInt()*iset.size()));
             T temp = list.get(first);
             list.set(first, list.get(second));
             list.set(second, temp);
